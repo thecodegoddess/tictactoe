@@ -1,0 +1,81 @@
+$X_BG: RebeccaPurple; //https://css-tricks.com/rebbeccapurple-663399/
+$Y_BG: DeepPink;
+$BOX_COLOR: rgba(255, 255, 255, .9);
+$BOX_BRDR: #2F2F2F;
+
+.TicTacToe {
+	font-size: 1.5rem;
+	width: 85%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-style: hidden;
+	padding: 0;
+
+	margin: 10px auto;
+
+	@include alm-media-querries(med) {
+		width: 45%;
+	}
+
+
+	&-box {
+		border: 3px solid $BOX_BRDR;
+		width: 33%;
+		height: 33%;
+		padding: 0;
+		text-align: center;
+		transition:
+			background-color 500ms,
+			opacity 500ms;
+		color: $BOX_COLOR;
+		font-weight: bold;
+		font-size: 1.25em;
+		position: relative;
+		opacity: 0;
+
+		&:before{
+			content: "";
+			display: block;
+			padding-top: 100%; 	/* initial ratio of 1:1*/
+		}
+
+
+		&[data-owner] {
+			opacity: 1;
+		}
+
+		&[data-owner="X"] {
+			color: $X_BG;
+		}
+
+		&[data-owner="O"] {
+			color: $Y_BG;
+		}
+
+
+	}
+
+	&-playerToken {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+
+
+}
+
+.TicTacToe--disabled {
+	position: relative;
+
+	.TicTacToe-box {
+		border-color: grey;
+	}
+
+	.TicTacToe-playerToken {
+		opacity: .5;
+	}
+
+}

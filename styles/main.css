@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* ****** Variables */
+/* ****** Placeholders */
+body, .Message {
+  font-family: ‘Metrophobic’, Arial, serif;
+  font-weight: 400; }
+
+/* ****** Mixins */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 32px; }
+  @media (min-width: 480px) {
+    html {
+      font-size: 48px; } }
+  @media (min-width: 960px) {
+    html {
+      font-size: 32px; } }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  background: -moz-radial-gradient(center, circle cover, #D3D3D3 0%, #A6A6A6 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #D3D3D3), color-stop(100%, #A6A6A6));
+  background: -webkit-radial-gradient(center, circle cover, #D3D3D3 0%, #A6A6A6 100%);
+  background: -o-radial-gradient(center, circle cover, #D3D3D3 0%, #A6A6A6 100%);
+  background: -ms-radial-gradient(center, circle cover, #D3D3D3 0%, #A6A6A6 100%);
+  background: radial-gradient(center, circle cover, #D3D3D3 0%, #A6A6A6 100%);
+  background-color: #D3D3D3;
+  background-repeat: no-repeat;
+  height: 100%;
+  color: #2E2E2E; }
+
+.TicTacToe {
+  font-size: 1.5rem;
+  width: 85%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-style: hidden;
+  padding: 0;
+  margin: 10px auto; }
+  @media (min-width: 960px) {
+    .TicTacToe {
+      width: 45%; } }
+  .TicTacToe-box {
+    border: 3px solid #2F2F2F;
+    width: 33%;
+    height: 33%;
+    padding: 0;
+    text-align: center;
+    transition: background-color 500ms, opacity 500ms;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    font-size: 1.25em;
+    position: relative;
+    opacity: 0; }
+    .TicTacToe-box:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+      /* initial ratio of 1:1*/ }
+    .TicTacToe-box[data-owner] {
+      opacity: 1; }
+    .TicTacToe-box[data-owner="X"] {
+      color: RebeccaPurple; }
+    .TicTacToe-box[data-owner="O"] {
+      color: DeepPink; }
+  .TicTacToe-playerToken {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center; }
+
+.TicTacToe--disabled {
+  position: relative; }
+  .TicTacToe--disabled .TicTacToe-box {
+    border-color: grey; }
+  .TicTacToe--disabled .TicTacToe-playerToken {
+    opacity: .5; }
+
+.MainSection {
+  font-size: 1rem;
+  margin: 20px;
+  background-color: rgba(255, 244, 247, 0.9);
+  padding: .5em;
+  border-radius: 4px;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.12); }
+  .MainSection-title {
+    font-size: .75em;
+    margin: 0 0 .75em; }
+
+.Message {
+  font-size: .75rem;
+  text-align: center;
+  padding: .5em; }
+
+/*# sourceMappingURL=main.css.map */

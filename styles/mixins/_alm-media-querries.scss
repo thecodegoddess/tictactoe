@@ -1,0 +1,24 @@
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
+
+@mixin alm-media-querries($point) {
+	@if $point == lrg {
+		@media (min-width: $mediaMaxWidth) {
+			@content;
+		}
+	}
+
+	@else if $point == med {
+		@media (min-width: $mediaBp1Width) {
+			@content;
+		}
+	}
+
+	@else if $point == sml {
+		@media (min-width: $mediaMinWidth)  {
+			@content;
+		}
+	}
+}

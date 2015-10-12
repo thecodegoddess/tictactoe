@@ -1,0 +1,36 @@
+/* ****** Mixins */
+@import "mixins/alm-radial-gradient";
+@import "mixins/alm-media-querries";
+
+// https://css-tricks.com/box-sizing/ see Universal sizing
+html {
+	box-sizing: border-box;
+	height: 100%;
+	font-size: 32px;
+
+	@include alm-media-querries(sml) {
+		font-size: 48px;
+	}
+
+	@include alm-media-querries(med) {
+		font-size: 32px;
+	}
+
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	@extend %montserrat-font;
+
+	@include alm-radial-gradient($BODY_BG, $BODY_BG2);
+
+	background-repeat: no-repeat;
+	height: 100%;
+	color: $BODY_COLOR;
+
+}
